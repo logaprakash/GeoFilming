@@ -1,0 +1,78 @@
+/*Created on 16-2-2018, by Shivraj Keshaowar*/
+
+
+/***************************************
+				body
+***************************************/
+body {
+	font-size: 16px;
+	line-height: 25px;
+	background-color: #fff;
+	margin-top: 50px;
+	color: #fff;
+}
+
+
+/***************************************
+				header
+***************************************/
+header {
+	margin-bottom: 10px;
+}
+
+header ul {
+	float: right;
+}
+
+header ul li {
+	float: right;
+}
+
+header ul li a {
+	text-decoration: none;
+	color: #fff;
+}
+
+
+
+/***************************************
+				footer
+***************************************/
+footer {
+	padding: 10px 0;
+	background-color: #101010;
+	color: #9d9d9d;
+	bottom: 10px;
+	width: 100%;
+}
+
+/***************************************
+				login form/panel
+***************************************/
+.panel {
+	margin-top: 10%; 
+}
+
+.panel-footer p {
+	color: #000;
+}
+
+.panel-footer p a {
+	text-decoration: none;
+}
+
+/***************************************
+				Sign Up form/page
+***************************************/
+.form-heading {
+	color: #000;
+	font-weight: bold;
+}
+
+form p {
+	color: #000;
+} 
+
+form p a {
+	text-decoration: none;
+}
