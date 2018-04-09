@@ -1,51 +1,253 @@
-<!--Created on 16-2-2018, by Shivraj Keshaowar-->
+<!--Created on 9-4-2018, by Shivraj Keshaowar-->
 
 
 <!DOCTYPE html>
 <html>
 <head>
-	<title>HomePage</title>
+	<title>Geo-Filming</title>
 
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
 
 	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
-
+	
+	<!--for tabs-->
+	<link rel="stylesheet" type="text/css" href="css/easy-responsive-tabs.css">
 </head>
 
 <body>
 
 	<header><!--start header-->
+
+		<nav class="navbar navbar-inverse"><!--start nav-->
+			
+			<div class="container-fluid"><!--start container-fluid-->
+		    
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+			       
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+
+			      </button>
+			      <a class="navbar-brand" href="index.html">GeoFilm Pro</a>
+			    </div>		      
+
+			</div><!--end container-fluid -->
 		
-		<nav class="navbar navbar-inverse navbar-fixed-top"><!--start nav-->
-			
-			<div class="container">
-				
-				<div class="navbar-header">
-					
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-					</button>
-
-					<a class="navbar-brand" href="index.html">GeoFilm Pro</a>
-				</div>
-
-				<div class="collapse navbar-collapse" id="myNavbar">
-					<ul class="nav navbar-nav navbar-right">
-						<li><a href="signup.html"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
-						<li><a href="login.html"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
-					</ul>				
-				</div>
-
-			</div>
-			
 		</nav><!--end nav-->
 
-	</header><!--end header-->
+		<div class="clear"></div>
 
+	</header><!--end header-->
+	
+	<div class="container-fluid"><!--start container-fluid-->
+		
+		<div class="row">
+			<div class="col-sm-12 col-md-12">
+
+				<div class="tabshtml"><!--start tabshtml-->
+	  
+				  	<div id="parentVerticalTab"><!--start parentVerticalTab-->
+
+			            <ul class="resp-tabs-list hor_1">
+			                <li>Result using State and Genre</li>
+			                <li>Result using State</li>
+			                <li>Result using Genre</li>
+			            </ul>
+
+			            <div class="resp-tabs-container hor_1">
+			                
+			                <div><!-- start tab1-->
+							
+								<form>
+				                    <select class="form-control custom-form-control">
+				                    	<option>-Select State-</option>
+				                    	<option value="">Alabama</option>
+				                    	<option value="">Alaska</option>
+				                    	<option value="">Arizona</option>
+				                    	<option value="">Arkansas</option>
+				                    	<option value="">California</option>
+				                    	<option value="">Colorado</option>
+				                    	<option value="">Connecticut</option>
+				                    	<option value="">Delaware</option>
+				                    	<option value="">Florida</option>
+				                    	<option value="">Georgia</option>
+				                    	<option value="">Hawaii</option>
+				                    	<option value="">Idaho</option>
+				                    	<option value="">Illinois</option>
+				                    	<option value="">Indiana</option>
+				                    	<option value="">Iowa</option>
+				                    	<option value="">Kansas</option>
+				                    	<option value="">Kentucky</option>
+				                    	<option value="">Louisiana</option>
+				                    	<option value="">Maine</option>
+				                    	<option value="">Maryland</option>
+				                    	<option value="">Massachusetts</option>
+				                    	<option value="">Michigan</option>
+				                    	<option value="">Minnesota</option>
+				                    	<option value="">Mississippi</option>
+				                    	<option value="">missouri</option>
+				                    	<option value="">Montana</option>
+				                    	<option value="">Nebraska</option>
+				                    	<option value="">Nevada</option>
+				                    	<option value="">New Hampshire</option>
+				                    	<option value="">New Jersey</option>
+				                    	<option value="">New Mexico</option>
+				                    	<option value="">New York</option>
+				                    	<option value="">North Carolina</option>
+				                    	<option value="">North Dakota</option>
+				                    	<option value="">Ohio</option>
+				                    	<option value="">Oklahoma</option>
+				                    	<option value="">Oregon</option>
+				                    	<option value="">Pennsylvania</option>
+				                    	<option value="">Rhode Island</option>
+				                    	<option value="">South Carolina</option>
+				                    	<option value="">South Dakota</option>
+				                    	<option value="">Tennessee</option>
+				                    	<option value="">Texas</option>
+				                    	<option value="">Utah</option>
+				                    	<option value="">Vermont</option>
+				                    	<option value="">Virginia</option>
+				                    	<option value="">Washington</option>
+				                    	<option value="">West Virginia</option>
+				                    	<option value="">Wisconsin</option>
+				                    	<option value="">Wyoming</option>
+				                    </select>
+
+				                    <select class="form-control custom-form-control">
+				                    	<option>-Select Genre-</option>
+				                    	<option value="">Action</option>
+				                    	<option value="">Adventure</option>
+				                    	<option value="">Animation</option>
+				                    	<option value="">Children's</option>
+				                    	<option value="">Comedy</option>
+				                    	<option value="">Crime</option>
+				                    	<option value="">Documentary</option>
+				                    	<option value="">Drama</option>
+				                    	<option value="">Fantasy</option>
+				                    	<option value="">Film-Noir</option>
+				                    	<option value="">Horror</option>
+				                    	<option value="">Musical</option>
+				                    	<option value="">Mystery</option>
+				                    	<option value="">Romance</option>
+				                    	<option value="">Sci-Fi</option>
+				                    	<option value="">Thriller</option>
+				                    	<option value="">War</option>
+				                    	<option value="">Western</option>
+				                    </select>
+				                    
+				                    <input type="submit" name="submit-button" value="Generate Graph" class="btn btn-danger">
+								</form>	
+			                
+			                </div><!--end tab1-->
+								
+
+			                <div><!--start tab2-->
+			                
+				                <form>   
+				                    <select class="form-control custom-form-control">
+				                    	<option>-Select State-</option>
+				                    	<option value="">Alabama</option>
+				                    	<option value="">Alaska</option>
+				                    	<option value="">Arizona</option>
+				                    	<option value="">Arkansas</option>
+				                    	<option value="">California</option>
+				                    	<option value="">Colorado</option>
+				                    	<option value="">Connecticut</option>
+				                    	<option value="">Delaware</option>
+				                    	<option value="">Florida</option>
+				                    	<option value="">Georgia</option>
+				                    	<option value="">Hawaii</option>
+				                    	<option value="">Idaho</option>
+				                    	<option value="">Illinois</option>
+				                    	<option value="">Indiana</option>
+				                    	<option value="">Iowa</option>
+				                    	<option value="">Kansas</option>
+				                    	<option value="">Kentucky</option>
+				                    	<option value="">Louisiana</option>
+				                    	<option value="">Maine</option>
+				                    	<option value="">Maryland</option>
+				                    	<option value="">Massachusetts</option>
+				                    	<option value="">Michigan</option>
+				                    	<option value="">Minnesota</option>
+				                    	<option value="">Mississippi</option>
+				                    	<option value="">missouri</option>
+				                    	<option value="">Montana</option>
+				                    	<option value="">Nebraska</option>
+				                    	<option value="">Nevada</option>
+				                    	<option value="">New Hampshire</option>
+				                    	<option value="">New Jersey</option>
+				                    	<option value="">New Mexico</option>
+				                    	<option value="">New York</option>
+				                    	<option value="">North Carolina</option>
+				                    	<option value="">North Dakota</option>
+				                    	<option value="">Ohio</option>
+				                    	<option value="">Oklahoma</option>
+				                    	<option value="">Oregon</option>
+				                    	<option value="">Pennsylvania</option>
+				                    	<option value="">Rhode Island</option>
+				                    	<option value="">South Carolina</option>
+				                    	<option value="">South Dakota</option>
+				                    	<option value="">Tennessee</option>
+				                    	<option value="">Texas</option>
+				                    	<option value="">Utah</option>
+				                    	<option value="">Vermont</option>
+				                    	<option value="">Virginia</option>
+				                    	<option value="">Washington</option>
+				                    	<option value="">West Virginia</option>
+				                    	<option value="">Wisconsin</option>
+				                    	<option value="">Wyoming</option>
+				                    </select>
+									
+									<input type="submit" name="submit-button" value="Generate Graph" class="btn btn-danger">
+								</form> 	
+			                
+			                </div><!--end tab2-->
+			                
+
+			                <div><!--start tab3-->
+			                
+				                <form>   
+				                    <select class="form-control custom-form-control">
+				                    	<option>-Select Genre-</option>
+				                    	<option value="">Action</option>
+				                    	<option value="">Adventure</option>
+				                    	<option value="">Animation</option>
+				                    	<option value="">Children's</option>
+				                    	<option value="">Comedy</option>
+				                    	<option value="">Crime</option>
+				                    	<option value="">Documentary</option>
+				                    	<option value="">Drama</option>
+				                    	<option value="">Fantasy</option>
+				                    	<option value="">Film-Noir</option>
+				                    	<option value="">Horror</option>
+				                    	<option value="">Musical</option>
+				                    	<option value="">Mystery</option>
+				                    	<option value="">Romance</option>
+				                    	<option value="">Sci-Fi</option>
+				                    	<option value="">Thriller</option>
+				                    	<option value="">War</option>
+				                    	<option value="">Western</option>
+				                    </select>
+
+				                    <input type="submit" name="submit-button" value="Generate Graph" class="btn btn-danger">
+								</form> 
+
+			                </div><!--end tab3-->
+
+			            </div>
+
+				    </div><!--end parentVerticalTab--> 
+
+				</div><!--end tabshtml-->
+
+			</div>	
+		</div>
+
+	</div><!--end container-fluid-->
 	
 	<footer class="footer navbar-fixed-bottom"><!--start footer-->
 
@@ -56,9 +258,59 @@
 	</footer><!--end footer-->
 
 
-<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--jQuery-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
 <script src="js/bootstrap.js"></script>
 
+<!--For tabs-->
+<script type="text/javascript" src="js/easyResponsiveTabs.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        // Child Tab
+        $('#ChildVerticalTab_1').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true,
+            tabidentify: 'ver_1', // The tab groups identifier
+            activetab_bg: '#fff', // background color for active tabs in this group
+            inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+            active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+            active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+        });
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
 </body>
 </html>
