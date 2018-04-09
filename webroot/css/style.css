@@ -1,8 +1,8 @@
-/*Created on 16-2-2018, by Shivraj Keshaowar*/
+/*Created on 9-4-2018, by Shivraj Keshaowar*/
 
 
 /***************************************
-				body
+		body
 ***************************************/
 body {
 	font-size: 16px;
@@ -12,11 +12,8 @@ body {
 	/*color: #fff;*/
 }
 
-.clear {
-	float: none;
-}
 /***************************************
-				header
+		header
 ***************************************/
 header {
 	margin-bottom: 10px;
@@ -37,7 +34,7 @@ header ul li a {
 
 
 /***************************************
-				custom-form-control
+	custom-form-control
 ***************************************/
 .custom-form-control {
 	width: 30%;
@@ -47,7 +44,7 @@ header ul li a {
 }
 
 /***************************************
-				footer
+		footer
 ***************************************/
 footer {
 	padding: 10px 0;
