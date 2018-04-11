@@ -1,10 +1,6 @@
 import pandas as pd
-import sklearn as sk
 from sklearn.feature_extraction.text import CountVectorizer
-from sklearn.preprocessing import MultiLabelBinarizer
-#import zipcode
 from uszipcode import ZipcodeSearchEngine
-from sklearn.linear_model import LogisticRegression
 
 """
 Reading the data
