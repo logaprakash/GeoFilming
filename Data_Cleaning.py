@@ -1,21 +1,10 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Tue Apr 10 15:28:47 2018
-
-@author: sakshi
-"""
-
-"""
-Cleaning Data
-"""
-
 import pandas as pd
 import sklearn as sk
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.preprocessing import MultiLabelBinarizer
-import zipcode
+#import zipcode
 from uszipcode import ZipcodeSearchEngine
+from sklearn.linear_model import LogisticRegression
 
 """
 Reading the data
@@ -25,7 +14,7 @@ movies_df = pd.read_csv('/home/sakshi/Documents/ml-1m/movies.dat',delimiter="::"
 ratings_df = pd.read_csv('/home/sakshi/Documents/ml-1m/ratings.dat',delimiter="::",engine="python",header=None, names=["UserID","MovieID","Rating","Timestamp"])
 
 """
-Cleaning
+Cleaning and Preprocessing
 """
 users_df["Altered_Zipcode"] = users_df.Zipcode.apply(lambda x : x[:5])
 search = ZipcodeSearchEngine()
@@ -38,5 +27,21 @@ movies_df["Genres"] = movies_df.Genres.apply(lambda x : x.split('|'))
 vect = CountVectorizer()
 genres_list = vect.fit_transform(movies_df.Genres.str.join(' '))
 genres_encoded = pd.DataFrame(genres_list.toarray(), columns = vect.get_feature_names())
-movies_df_test = pd.concat([movies_df,genres_encoded],axis=1,join='inner')
 
+movies_df_encoded = pd.concat([movies_df,genres_encoded],axis=1,join='inner')
+data_df = pd.concat([movies_df.MovieID,genres_encoded],axis=1,join='inner')
+
+states_list = vect.fit_transform(users_df.Altered_Zipcode_State)
+states_encoded = pd.DataFrame(states_list.toarray(), columns = vect.get_feature_names())
+states_encoded["UserID"] = states_encoded.index
+
+set_df = ratings_df.drop(columns=["Timestamp"])
+set_df_test = pd.merge(left=set_df, right=data_df, how='left', left_on='MovieID',right_on='MovieID')
+set_df_test["UserState"] = set_df_test.UserID.apply(lambda x : users_df.Altered_Zipcode_State[x])
+set_df_test_2 = pd.merge(left=set_df_test, right=states_encoded, how='left', left_on = 'UserID', right_on = 'UserID')
+
+dataset_df = set_df_test.drop(columns=["UserID","UserState","MovieID"])
+dataset_df_2 = set_df_test_2.drop(columns=["UserID","UserState","MovieID"])
+
+dataset_df.to_pickle('dataset_df.p')
+dataset_df_2.to_pickle('dataset_df_states_encoded.p')
