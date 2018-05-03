@@ -14,7 +14,7 @@ target = dataset_df["Rating"]
 X_train, X_test, Y_train, Y_test = data[:800000], data[800000:], target[:800000], target[800000:]
 linReg = LinearRegression()
 linReg.fit(X_train, Y_train)
-linReg_prediction = linReg1.predict(X_test)
+linReg_prediction = linReg.predict(X_test)
 print("Accuracy:"+ str(linReg.score(X_test,Y_test)));
 
 
