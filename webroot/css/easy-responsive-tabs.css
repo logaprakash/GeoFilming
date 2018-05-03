@@ -83,7 +83,7 @@ h2.resp-tab-title:last-child {
 /*-----------Vertical tabs-----------*/
 .resp-vtabs ul.resp-tabs-list {
     float: left;
-    width: 30%;
+    width: 20%;
 }
 
 .resp-vtabs .resp-tabs-list li {
