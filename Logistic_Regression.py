@@ -24,10 +24,11 @@ logReg1.fit(data, target)
 
 filename = 'logistic_model_with_state.p'
 
-pickle.dump(logReg, open(filename, 'wb'))
+pickle.dump(logReg1, open(filename, 'wb'))
 print("files created")
     
 sample_input = data.loc[[1]]
+sample_input.replace(1,0)
 sample_input.to_pickle("sample_input.p")
 #
 #

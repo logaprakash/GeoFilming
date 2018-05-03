@@ -17,14 +17,13 @@ app = Flask(__name__)
 def predict(): 
     input_data = request.get_json(force=True)
     key_list = input_data['key']
-    value_list = input_data['value']
-    pair = dict(zip(key_list, value_list))
     
-    for key, value in pair.items():
-        loaded_input[key] = value_list[value]
+   
+    for key in key_list:
+        loaded_input[key] =1
     
     result_linear = loaded_model_linear.predict(loaded_input)
-    result_logistic = loaded_model_linear.predict(loaded_input)
+    result_logistic = loaded_mode_logistic.predict(loaded_input)
     result = jsonify({'result_linear':str(result_linear[0]),'result_logistic':str(result_logistic[0])})
     return result
     
