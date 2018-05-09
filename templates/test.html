@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+<script>
+var app = angular.module('myApp', []);
+app.controller('myCtrl', function($scope, $http) {
+
+$scope.predict_state = function(state){
+var data = JSON.stringify({"key":[state]});
+    $http.post("/predict-genre",data, {headers: {'Content-Type': 'application/json'}})
+    .then(function(response) {
+        alert(response.data.result_linear);
+    });
+};
+	
+});
+</script>
+</head>
+<body ng-app="myApp" ng-controller="myCtrl">
+<p>Today's welcome message is:</p>
+<h1>{{myWelcome}}</h1>
+
+</div>
+</body>
+</html>

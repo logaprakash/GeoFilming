@@ -1,0 +1,687 @@
+<!--Created on 9-4-2018, by Shivraj Keshaowar-->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>GeoFilming</title>
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width,user-scalable=no,initial-scale=1,maximum-scale=1,minimum-scale=1">
+
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/bootstrap.css') }}">
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/style.css') }}">
+	
+	<!--for tabs-->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='css/easy-responsive-tabs.css') }}">
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+	<script src = "https://cdn.zingchart.com/zingchart.min.js" ></script>  
+	<script src = "https://cdn.zingchart.com/angular/zingchart-angularjs.js" ></script>  
+</head>
+
+<body ng-app="myApp" ng-controller="myCtrl">
+
+	<header><!--start header-->
+
+		<nav class="navbar navbar-inverse"><!--start nav-->
+			
+			<div class="container-fluid"><!--start container-fluid-->
+		    
+			    <div class="navbar-header">
+			      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#myNavbar">
+			       
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+			        <span class="icon-bar"></span>
+
+			      </button>
+			      <a class="navbar-brand" href="index.html">GeoFilm Pro</a>
+			    </div>		      
+
+			</div><!--end container-fluid -->
+		
+		</nav><!--end nav-->
+
+	</header><!--end header-->
+	
+	<div class="container-fluid"><!--start container-fluid-->
+		
+		<div class="row"><!--start row-->
+			<div class="col-sm-offset-1 col-md-offset-1 col-sm-11 col-md-11"><!--start cols-->
+
+				<div class="tabshtml"><!--start tabshtml-->
+	  
+				  	<div id="parentVerticalTab"><!--start parentVerticalTab-->
+
+			            <ul class="resp-tabs-list hor_1">
+			                <li>Result using State and Genre</li>
+			                <li>Result using State</li>
+			                <li>Result using Genre</li>
+			            </ul>
+
+			            <div class="resp-tabs-container hor_1">
+			                
+			                <div><!-- start tab1-->
+								<div>
+									<form method="post">
+					                    <select class="form-control custom-form-control" ng-model="state1">
+					                    	<option>-Select State-</option>
+					                    	<option value="al" name="AL">Alabama</option>
+					                    	<option value="ak" name="AK">Alaska</option>
+					                    	<option value="az" name="AZ">Arizona</option>
+					                    	<option value="ar" name="AR">Arkansas</option>
+					                    	<option value="ca" name="CA">California</option>
+					                    	<option value="co" name="CO">Colorado</option>
+					                    	<option value="ct" name="CT">Connecticut</option>
+					                    	<option value="de" name="DE">Delaware</option>
+					                    	<option value="fl" name="FL">Florida</option>
+					                    	<option value="ga" name="GA">Georgia</option>
+					                    	<option value="hi" name="HI">Hawaii</option>
+					                    	<option value="id" name="ID">Idaho</option>
+					                    	<option value="il" name="IL">Illinois</option>
+					                    	<option value="in" name="IN">Indiana</option>
+					                    	<option value="ia" name="IA">Iowa</option>
+					                    	<option value="ks" name="KS">Kansas</option>
+					                    	<option value="ky" name="KY">Kentucky</option>
+					                    	<option value="la" name="LA">Louisiana</option>
+					                    	<option value="me" name="ME">Maine</option>
+					                    	<option value="md" name="MD">Maryland</option>
+					                    	<option value="ma" name="MA">Massachusetts</option>
+					                    	<option value="mi" name="MI">Michigan</option>
+					                    	<option value="mn" name="MN">Minnesota</option>
+					                    	<option value="ms" name="MS">Mississippi</option>
+					                    	<option value="mo" name="MO">missouri</option>
+					                    	<option value="mt" name="MT">Montana</option>
+					                    	<option value="ne" name="NE">Nebraska</option>
+					                    	<option value="nv" name="NV">Nevada</option>
+					                    	<option value="nh" name="NH">New Hampshire</option>
+					                    	<option value="nj" name="NJ">New Jersey</option>
+					                    	<option value="nm" name="NM">New Mexico</option>
+					                    	<option value="ny" name="NY">New York</option>
+					                    	<option value="nc" name="NC">North Carolina</option>
+					                    	<option value="nd" name="ND">North Dakota</option>
+					                    	<option value="oh" name="OH">Ohio</option>
+					                    	<option value="ok" name="OK">Oklahoma</option>
+					                    	<option value="or" name="OR">Oregon</option>
+					                    	<option value="pa" name="PA">Pennsylvania</option>
+					                    	<option value="ri" name="RI">Rhode Island</option>
+					                    	<option value="sc" name="SC">South Carolina</option>
+					                    	<option value="sd" name="SD">South Dakota</option>
+					                    	<option value="tn" name="TN">Tennessee</option>
+					                    	<option value="tx" name="TX">Texas</option>
+					                    	<option value="ut" name="UT">Utah</option>
+					                    	<option value="vt" name="VT">Vermont</option>
+					                    	<option value="va" name="VA">Virginia</option>
+					                    	<option value="wa" name="WA">Washington</option>
+					                    	<option value="wv" name="WV">West Virginia</option>
+					                    	<option value="wi" name="WI">Wisconsin</option>
+					                    	<option value="wy" name="WY">Wyoming</option>
+					                    </select>
+
+					                    <!--select class="form-control custom-form-control">
+					                    	<option>-Select Genre-</option>
+					                    	<option value="">Action</option>
+					                    	<option value="">Adventure</option>
+					                    	<option value="">Animation</option>
+					                    	<option value="">Children's</option>
+					                    	<option value="">Comedy</option>
+					                    	<option value="">Crime</option>
+					                    	<option value="">Documentary</option>
+					                    	<option value="">Drama</option>
+					                    	<option value="">Fantasy</option>
+					                    	<option value="">Film-Noir</option>
+					                    	<option value="">Horror</option>
+					                    	<option value="">Musical</option>
+					                    	<option value="">Mystery</option>
+					                    	<option value="">Romance</option>
+					                    	<option value="">Sci-Fi</option>
+					                    	<option value="">Thriller</option>
+					                    	<option value="">War</option>
+					                    	<option value="">Western</option>
+					                    </select-->
+
+					                    <!--Checkbox-->
+					              	    
+					                    <label class="control control--checkbox">Action
+									      	<input type="checkbox" ng-click="toggleSelection($event,'action')"/>
+									      	<div class="control__indicator" ></div>
+								    	</label>
+									    <label class="control control--checkbox">Adventure
+									      	<input type="checkbox" ng-click="toggleSelection($event,'adventure')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Animation
+									      	<input type="checkbox" ng-click="toggleSelection($event,'animation')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Children
+									      	<input type="checkbox" ng-click="toggleSelection($event,'children')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Comedy
+									      	<input type="checkbox" ng-click="toggleSelection($event,'comedy')"/>
+									      	<div class="control__indicator" ></div>
+									    </label>
+									    <label class="control control--checkbox">Crime
+									      	<input type="checkbox" ng-click="toggleSelection($event,'crime')"/>
+									      	<div class="control__indicator" ></div>
+									    </label>
+									    <label class="control control--checkbox">Documentary
+									      	<input type="checkbox" ng-click="toggleSelection($event,'documentary')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Drama
+									      	<input type="checkbox" ng-click="toggleSelection($event,'drama')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Fantasy
+									      	<input type="checkbox" ng-click="toggleSelection($event,'fantasy')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Film-Noir
+									      	<input type="checkbox" ng-click="toggleSelection($event,'film')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Horror
+									      	<input type="checkbox" ng-click="toggleSelection($event,'horror')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Musical
+									      	<input type="checkbox" ng-click="toggleSelection($event,'musical')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Mystery
+									      	<input type="checkbox" ng-click="toggleSelection($event,'mystery')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Romance
+									      	<input type="checkbox" ng-click="toggleSelection($event,'romance')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Sci-fi
+									      	<input type="checkbox" ng-click="toggleSelection($event,'sci')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Thriller
+									      	<input type="checkbox" ng-click="toggleSelection($event,'thiller')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">War
+									      	<input type="checkbox" ng-click="toggleSelection($event,'war')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Western
+									      	<input type="checkbox" ng-click="toggleSelection($event,'western')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+					                    
+										<br>
+					                    <input type="submit" ng-click="predict_state_genre(state1)" name="submit-button" value="Generate Graph" class="btn btn-danger">
+									</form>	
+				                </div>
+
+				               <div style="padding:10px;margin: 0 auto;">
+									<zingchart id = "chart1" zc-json = "result1" zc-height = 300 zc-width = 400 ></zingchart>  
+								</div>
+							  
+			                
+			                </div><!--end tab1-->
+								
+
+			                <div ><!--start tab2-->
+			                
+				                <form method="post" name="form2" id="form2"  >   
+				                    <select class="form-control custom-form-control" ng-model="state">
+					                    	<option value="al" name="AL">Alabama</option>
+					                    	<option value="ak" name="AK">Alaska</option>
+					                    	<option value="az" name="AZ">Arizona</option>
+					                    	<option value="ar" name="AR">Arkansas</option>
+					                    	<option value="ca" name="CA">California</option>
+					                    	<option value="co" name="CO">Colorado</option>
+					                    	<option value="ct" name="CT">Connecticut</option>
+					                    	<option value="de" name="DE">Delaware</option>
+					                    	<option value="fl" name="FL">Florida</option>
+					                    	<option value="ga" name="GA">Georgia</option>
+					                    	<option value="hi" name="HI">Hawaii</option>
+					                    	<option value="id" name="ID">Idaho</option>
+					                    	<option value="il" name="IL">Illinois</option>
+					                    	<option value="in" name="IN">Indiana</option>
+					                    	<option value="ia" name="IA">Iowa</option>
+					                    	<option value="ks" name="KS">Kansas</option>
+					                    	<option value="ky" name="KY">Kentucky</option>
+					                    	<option value="la" name="LA">Louisiana</option>
+					                    	<option value="me" name="ME">Maine</option>
+					                    	<option value="md" name="MD">Maryland</option>
+					                    	<option value="ma" name="MA">Massachusetts</option>
+					                    	<option value="mi" name="MI">Michigan</option>
+					                    	<option value="mn" name="MN">Minnesota</option>
+					                    	<option value="ms" name="MS">Mississippi</option>
+					                    	<option value="mo" name="MO">missouri</option>
+					                    	<option value="mt" name="MT">Montana</option>
+					                    	<option value="ne" name="NE">Nebraska</option>
+					                    	<option value="nv" name="NV">Nevada</option>
+					                    	<option value="nh" name="NH">New Hampshire</option>
+					                    	<option value="nj" name="NJ">New Jersey</option>
+					                    	<option value="nm" name="NM">New Mexico</option>
+					                    	<option value="ny" name="NY">New York</option>
+					                    	<option value="nc" name="NC">North Carolina</option>
+					                    	<option value="nd" name="ND">North Dakota</option>
+					                    	<option value="oh" name="OH">Ohio</option>
+					                    	<option value="ok" name="OK">Oklahoma</option>
+					                    	<option value="or" name="OR">Oregon</option>
+					                    	<option value="pa" name="PA">Pennsylvania</option>
+					                    	<option value="ri" name="RI">Rhode Island</option>
+					                    	<option value="sc" name="SC">South Carolina</option>
+					                    	<option value="sd" name="SD">South Dakota</option>
+					                    	<option value="tn" name="TN">Tennessee</option>
+					                    	<option value="tx" name="TX">Texas</option>
+					                    	<option value="ut" name="UT">Utah</option>
+					                    	<option value="vt" name="VT">Vermont</option>
+					                    	<option value="va" name="VA">Virginia</option>
+					                    	<option value="wa" name="WA">Washington</option>
+					                    	<option value="wv" name="WV">West Virginia</option>
+					                    	<option value="wi" name="WI">Wisconsin</option>
+					                    	<option value="wy" name="WY">Wyoming</option>
+				                    </select>
+									
+									<input type="submit" ng-click="predict_state(state)" name="submit-button" value="Generate Graph" class="btn btn-danger">
+								</form> 	
+			                	<div style="padding:10px;margin: 0 auto;">
+									<zingchart id = "chart2" zc-json = "result2" zc-height = 800 zc-width = 800 ></zingchart>  
+								</div>
+							</div><!--end tab2-->
+			                
+
+			                <div><!--start tab3-->
+			                
+				                <form method="post">   
+									<br>
+				                  <label class="control control--checkbox">Action
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'action')"/>
+									      	<div class="control__indicator" ></div>
+								    	</label>
+									    <label class="control control--checkbox">Adventure
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'adventure')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Animation
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'animation')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Children
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'children')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Comedy
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'comedy')"/>
+									      	<div class="control__indicator" ></div>
+									    </label>
+									    <label class="control control--checkbox">Crime
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'crime')"/>
+									      	<div class="control__indicator" ></div>
+									    </label>
+									    <label class="control control--checkbox">Documentary
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'documentary')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Drama
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'drama')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Fantasy
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'fantasy')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Film-Noir
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'film')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Horror
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'horror')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Musical
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'musical')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Mystery
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'mystery')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Romance
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'romance')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Sci-fi
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'sci')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Thriller
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'thiller')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">War
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'war')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+									    <label class="control control--checkbox">Western
+									      	<input type="checkbox" ng-click="toggleSelection1($event,'western')"/>
+									      	<div class="control__indicator"></div>
+									    </label>
+					                <br>
+				                    <input type="submit" ng-click="predict_genre()" name="submit-button" value="Generate Graph" class="btn btn-danger">
+								</form> 
+								
+								<div style="padding:10px;margin: 0 auto;">
+									<zingchart id = "chart3" zc-json = "result3" zc-height = 800 zc-width = 600 ></zingchart>  
+								</div>
+			                </div><!--end tab3-->
+
+			            </div>
+
+				    </div><!--end parentVerticalTab--> 
+
+				</div><!--end tabshtml-->
+
+			</div><!--end cols-->	
+		</div><!--end row-->
+
+	</div><!--end  container-fluid-->
+
+
+	<!--footer class="footer navbar-fixed-bottom"><start footer>
+
+		<center>
+			Copyright &copy; GeoFilm Pro. All Rights Reserved | Contact Us: +91 90000 00000
+		</center>	
+
+	</footer><end footer-->
+
+
+<!--jQuery-->
+<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script> not required for now-->
+<script src="{{ url_for('static',filename='js/jquery.js') }}"></script>
+<script src="{{ url_for('static',filename='js/bootstrap.js') }}"></script>
+
+
+<!--Javascript for chart-->
+<!--script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.min.js"></script>
+
+
+<!--For tabs-->
+<script type="text/javascript" src="{{ url_for('static',filename='js/easyResponsiveTabs.js') }}"></script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        //Horizontal Tab
+        $('#parentHorizontalTab').easyResponsiveTabs({
+            type: 'default', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+
+        // Child Tab
+        $('#ChildVerticalTab_1').easyResponsiveTabs({
+            type: 'vertical',
+            width: 'auto',
+            fit: true,
+            tabidentify: 'ver_1', // The tab groups identifier
+            activetab_bg: '#fff', // background color for active tabs in this group
+            inactive_bg: '#F5F5F5', // background color for inactive tabs in this group
+            active_border_color: '#c1c1c1', // border color for active tabs heads in this group
+            active_content_border_color: '#5AB1D0' // border color for active tabs contect in this group so that it matches the tab head border
+        });
+
+        //Vertical Tab
+        $('#parentVerticalTab').easyResponsiveTabs({
+            type: 'vertical', //Types: default, vertical, accordion
+            width: 'auto', //auto or any width like 600px
+            fit: true, // 100% fit in a container
+            closed: 'accordion', // Start closed if in accordion view
+            tabidentify: 'hor_1', // The tab groups identifier
+            activate: function(event) { // Callback function if tab is switched
+                var $tab = $(this);
+                var $info = $('#nested-tabInfo2');
+                var $name = $('span', $info);
+                $name.text($tab.text());
+                $info.show();
+            }
+        });
+    });
+</script>
+<script>
+var app = angular.module('myApp', ['zingchart-angularjs']);
+app.controller('myCtrl', function($scope, $http) {
+$scope.genreArray = [] ;
+$scope.genreArray1 = [] ;
+$scope.predict_state = function(state){
+  
+var data = JSON.stringify({"key":[state]});
+    $http.post("/predict-genre1",data, {headers: {'Content-Type': 'application/json'}})
+    .then(function(response) {
+		$scope.result_key2 = response.data.key;
+		$scope.result_value_linear2 = response.data.value_linear;
+		$scope.result_value_logistic2 = response.data.value_logistic;
+		$scope.result2 = {  
+			type : 'vline' ,
+			  labels:[
+    {
+      text:"Linear regression",
+      fontSize:"12px",
+	  fontColor : '#d63512',
+      borderWidth:"1px",
+      padding : "5px",
+      borderRadius : 10
+    },
+    {
+      text:"Logistic regression",
+      x:"15%",
+      fontSize:"12px",
+      fontColor : '#0084b4',
+	  borderWidth:"1px",
+      padding : "5px",
+      borderRadius : 10
+    }
+  ],
+			scaleY: {
+						minValue : 20,
+						values: "0:100:10"
+					},
+			scaleX: {
+						labels: $scope.result_key2
+					},
+			series : [   
+						{ 
+						values : $scope.result_value_linear2,
+						lineColor: '#d63512',
+						marker: {
+							backgroundColor: '#d63512'
+						},
+			
+						guideLabel: {
+							  text: 'linear regression: %v',
+							  backgroundColor: '#d63512',
+							  borderColor: '#d63512',
+							  fontColor: '#d63512',
+							  lineStyle: 'dotted'
+						}},
+						{ 
+						values : $scope.result_value_logistic2,
+						lineColor: '#0084b4',
+						marker: {
+							backgroundColor: '#0084b4'
+						},
+			
+						guideLabel: {
+							  text: 'logistic regression: %v',
+							  backgroundColor: '#0084b4',
+							  borderColor: '#0084b4',
+							  fontColor: '#0084b4',
+							  lineStyle: 'dotted'
+						}
+						}
+					]  
+		
+					};
+    });
+	
+};
+$scope.predict_genre = function(){
+  
+var data = JSON.stringify({"key":$scope.genreArray1});
+    $http.post("/predict-state1",data, {headers: {'Content-Type': 'application/json'}})
+    .then(function(response) {
+		$scope.result_key2 = response.data.key;
+		$scope.result_value_linear2 = response.data.value_linear;
+		$scope.result_value_logistic2 = response.data.value_logistic;
+		$scope.result3 = {  
+			type : 'vline' ,
+			labels:[
+    {
+      text:"Linear regression",
+      fontSize:"12px",
+	  fontColor : '#d63512',
+      borderWidth:"1px",
+      padding : "5px",
+      borderRadius : 10
+    },
+    {
+      text:"Logistic regression",
+      x:"25%",
+      fontSize:"12px",
+      fontColor : '#0084b4',
+	  borderWidth:"1px",
+      padding : "5px",
+      borderRadius : 10
+    }
+  ],
+			  scaleY: {
+						minValue : 20,
+						values: "0:100:10"
+					},
+			scaleX: {
+						labels: $scope.result_key2
+					},
+			series : [   
+						{ 
+						values : $scope.result_value_linear2,
+						lineColor: '#d63512',
+						marker: {
+							backgroundColor: '#d63512'
+						},
+			
+						guideLabel: {
+							  text: 'linear regression: %v',
+							  backgroundColor: '#d63512',
+							  borderColor: '#d63512',
+							  fontColor: '#d63512',
+							  lineStyle: 'dotted'
+						}},
+						{ 
+						values : $scope.result_value_logistic2,
+						lineColor: '#0084b4',
+						marker: {
+							backgroundColor: '#0084b4'
+						},
+			
+						guideLabel: {
+							  text: 'logistic regression: %v',
+							  backgroundColor: '#0084b4',
+							  borderColor: '#0084b4',
+							  fontColor: '#0084b4',
+							  lineStyle: 'dotted'
+						}
+						}
+					]  
+		
+					};
+    });
+	
+};
+  $scope.toggleSelection = function toggleSelection(event,temp) {
+          // how to check if checkbox is selected or not
+		  if(event.target.checked){
+			if ($scope.genreArray.indexOf(temp) > -1) {
+    
+} 			else {
+				$scope.genreArray.push(temp);
+				console.log($scope.genreArray);
+				}
+			}
+		 else{
+			if ($scope.genreArray.indexOf(temp) > -1) {
+			var index = $scope.genreArray.indexOf(temp);
+			$scope.genreArray.splice(index, 1);    
+			console.log($scope.genreArray);
+			} 			
+			else {
+				
+				}
+			}
+		
+        };
+$scope.toggleSelection1 = function toggleSelection(event,temp) {
+          // how to check if checkbox is selected or not
+		  if(event.target.checked){
+			if ($scope.genreArray1.indexOf(temp) > -1) {
+    
+} 			else {
+				$scope.genreArray1.push(temp);
+				console.log($scope.genreArray1);
+				}
+			}
+		 else{
+			if ($scope.genreArray1.indexOf(temp) > -1) {
+			var index = $scope.genreArray1.indexOf(temp);
+			$scope.genreArray1.splice(index, 1);    
+			console.log($scope.genreArray1);
+			} 			
+			else {
+				
+				}
+			}
+		
+        };
+$scope.predict_state_genre = function(state){
+$scope.genreArray.push(state);
+var data = JSON.stringify({"key":$scope.genreArray});
+    $http.post("/predict",data, {headers: {'Content-Type': 'application/json'}})
+    .then(function(response) {
+		$scope.result_value_linear = response.data.result_linear;
+		$scope.result_value_logistic = response.data.result_logistic;
+		console.log("Linear: "+$scope.result_value_linear);
+		console.log("Logistic: "+$scope.result_value_logistic);
+		$scope.genreArray = [];
+				$scope.result1 = {  
+			type : 'bar' ,
+			
+			scaleY: {
+						minValue : 20,
+						values: "0:100:10"
+					},
+			scaleX: {
+							labels: ["Linear Regression","Logistic Regression"]		
+					},
+			series : [   
+						{ 
+							values : [$scope.result_value_linear,$scope.result_value_logistic],
+						}
+					]  
+		
+					};
+    });
+	
+};
+});
+</script>
+</body>
+</html>

@@ -13,7 +13,7 @@ from uszipcode import ZipcodeSearchEngine
 """
 Reading the data
 """
-users_df = pd.read_csv('DataSet/users.dat',delimiter="::",engine="python",header=None, names=["UserID","Gender","Age","Occupation","Zipcode"],index_col="UserID")
+users_df.columns = pd.read_csv('DataSet/users.dat',delimiter="::",engine="python",header=None, names=["UserID","Gender","Age","Occupation","Zipcode"],index_col="UserID")
 movies_df = pd.read_csv('DataSet/movies.dat',delimiter="::",engine="python",header=None, names=["MovieID","Title","Genres"])
 ratings_df = pd.read_csv('DataSet/ratings.dat',delimiter="::",engine="python",header=None, names=["UserID","MovieID","Rating","Timestamp"])
 
